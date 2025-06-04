@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=300, initial-scale=1.0" />
+  <title>Beautiful Swiper Slider</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 200px;
+        width: 300px;
+        overflow: hidden;
+      }
+      .container {
+        height: 200px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+        background-image: url("./bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+        /* Shared image style */
+        .container img {
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+    
+        }
+
+    /* Swiper Container */
+    .swiper {
+      width: 300px;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Swiper Slides */
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-slide img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Swiper Controls */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #444;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #888;
+      opacity: 0.7;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #333;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./electronics-10.png" alt="Electronics" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./fashion-10.png" alt="Fashion" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./grocery-10.png" alt="Grocery" />
+      </div>
+      <div class="swiper-slide">
+        <img src="./pack-kinun.png" alt="Pack" />
+      </div>
+    </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      effect: 'slide',
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
